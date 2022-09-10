@@ -1,4 +1,5 @@
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
+import styled from '@emotion/styled';
 import React from 'react';
 
 /******************************************************************************
@@ -39,6 +40,11 @@ function __rest(s, e) {
     return t;
 }
 
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+}
+
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -66,7 +72,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$2 = ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color:red;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n";
+var css_248z$2 = ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n";
 styleInject(css_248z$2);
 
 /**
@@ -77,6 +83,16 @@ var Button = function (_a) {
     var mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
     return (jsx("button", __assign({ type: "button", className: ['storybook-button', "storybook-button--".concat(size), mode].join(' '), style: { backgroundColor: backgroundColor } }, props, { children: label })));
 };
+
+/**
+ * Primary UI component for user interaction
+ */
+var EmotionButton = function (_a) {
+    var _b = _a.primary, primary = _b === void 0 ? false : _b, _c = _a.size, size = _c === void 0 ? 'medium' : _c; _a.backgroundColor; var label = _a.label, props = __rest(_a, ["primary", "size", "backgroundColor", "label"]);
+    return (jsx(StyledButton, __assign({ type: "button", "data-primary": primary, "data-size": size }, props, { children: label })));
+};
+var StyledButton = styled.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n\n  /* default is medium size */\n  font-size: 14px;\n  padding: 11px 20px;\n  \n  /* default type is primary */\n  color: white;\n  background-color: #1ea7fd;\n  \n  &[data-primary='false']{\n    color: #333;\n    background-color: transparent;\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  }\n\n  &[data-size='small']{\n    font-size: 12px;\n    padding: 10px 16px;\n  }\n\n  &[data-size='large']{\n    font-size: 16px;\n    padding: 12px 24px;\n  }\n"], ["\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n\n  /* default is medium size */\n  font-size: 14px;\n  padding: 11px 20px;\n  \n  /* default type is primary */\n  color: white;\n  background-color: #1ea7fd;\n  \n  &[data-primary='false']{\n    color: #333;\n    background-color: transparent;\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  }\n\n  &[data-size='small']{\n    font-size: 12px;\n    padding: 10px 16px;\n  }\n\n  &[data-size='large']{\n    font-size: 16px;\n    padding: 12px 24px;\n  }\n"])));
+var templateObject_1;
 
 var css_248z$1 = ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n";
 styleInject(css_248z$1);
@@ -94,5 +110,5 @@ var Page = function () {
     return (jsxs("article", { children: [jsx(Header, { user: user, onLogin: function () { return setUser({ name: 'Jane Doe' }); }, onLogout: function () { return setUser(undefined); }, onCreateAccount: function () { return setUser({ name: 'Jane Doe' }); } }), jsxs("section", { children: [jsx("h2", { children: "Pages in Storybook" }), jsxs("p", { children: ["We recommend building UIs with a", ' ', jsx("a", __assign({ href: "https://componentdriven.org", target: "_blank", rel: "noopener noreferrer" }, { children: jsx("strong", { children: "component-driven" }) })), ' ', "process starting with atomic components and ending with pages."] }), jsx("p", { children: "Render pages with mock data. This makes it easy to build and review page states without needing to navigate to them in your app. Here are some handy patterns for managing page data in Storybook:" }), jsxs("ul", { children: [jsx("li", { children: "Use a higher-level connected component. Storybook helps you compose such data from the \"args\" of child component stories" }), jsx("li", { children: "Assemble data in the page component from your services. You can mock these services out using Storybook." })] }), jsxs("p", { children: ["Get a guided tutorial on component-driven development at", ' ', jsx("a", __assign({ href: "https://storybook.js.org/tutorials/", target: "_blank", rel: "noopener noreferrer" }, { children: "Storybook tutorials" })), ". Read more in the", ' ', jsx("a", __assign({ href: "https://storybook.js.org/docs", target: "_blank", rel: "noopener noreferrer" }, { children: "docs" })), "."] }), jsxs("div", __assign({ className: "tip-wrapper" }, { children: [jsx("span", __assign({ className: "tip" }, { children: "Tip" })), " Adjust the width of the canvas with the", ' ', jsx("svg", __assign({ width: "10", height: "10", viewBox: "0 0 12 12", xmlns: "http://www.w3.org/2000/svg" }, { children: jsx("g", __assign({ fill: "none", fillRule: "evenodd" }, { children: jsx("path", { d: "M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z", id: "a", fill: "#999" }) })) })), "Viewports addon in the toolbar"] }))] })] }));
 };
 
-export { Button, Header, Page };
+export { Button, EmotionButton, Header, Page };
 //# sourceMappingURL=index.es.js.map
