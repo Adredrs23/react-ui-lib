@@ -1,3 +1,6 @@
+import { addParameters } from "@storybook/react"
+import customTheme from "./customTheme"
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +10,10 @@ export const parameters = {
     },
   },
 }
+
+addParameters({
+  options: {
+    theme: customTheme,
+    // showRoots: true  
+  }
+})
