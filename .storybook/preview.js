@@ -14,6 +14,5 @@ export const parameters = {
 addParameters({
   options: {
     theme: customTheme,
-    // showRoots: true  
   }
 })

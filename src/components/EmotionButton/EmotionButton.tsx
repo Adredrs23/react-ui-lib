@@ -41,7 +41,7 @@ export const EmotionButton: FC<EmotionButtonProps> = ({
       type="button"
       data-primary={primary}
       data-size={size}
-      // style={{ backgroundColor }}
+      style={{ backgroundColor }}
       {...props}
     >
       {label}
@@ -69,7 +69,7 @@ const StyledButton = styled.button`
   
   &[data-primary='false']{
     color: #333;
-    background-color: transparent;
+    background-color: red;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   }
 

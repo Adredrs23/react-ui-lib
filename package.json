@@ -10,23 +10,13 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
     ]
   },
   "browserslist": {
@@ -42,8 +32,7 @@
     ]
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@babel/core": "^7.19.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@rollup/plugin-commonjs": "^22.0.2",
@@ -53,19 +42,10 @@
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
-    "@storybook/node-logger": "^6.5.10",
-    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/manager-webpack4": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
-    "babel-plugin-named-exports-order": "^0.0.2",
-    "postcss": "^8.4.16",
-    "prop-types": "^15.8.1",
-    "rollup": "^2.79.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "webpack": "^5.74.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -73,12 +53,23 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "typescript": "^4.4.2"
-  },
-  "peerDependencies": {
+    "babel-loader": "^8.2.5",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "postcss": "^8.4.16",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup": "^2.79.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.4.2",
+    "webpack": "^5.74.0"
+  },
+  "peerDependencies": {
     "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4"
-  }
+    "@emotion/styled": "^11.10.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {}
 }
